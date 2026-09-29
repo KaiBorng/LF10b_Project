@@ -28,7 +28,7 @@
 |24.| select the disk, where you want to save your OS | /dev/nvmeOn1 - 512.1 GB ... |
 |25.| select the Partitioning | All files in one Partition (recommended for new users) |
 |26.| press enter | - |
-|27.| klick YES and press enter
+|27.| select YES | - |
 |28.| *wait a few moments* | - |
 |29.| configure the package manager | YES |
 |30.| choose your mirror Location | United Kingdom |
