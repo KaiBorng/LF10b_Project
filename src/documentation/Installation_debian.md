@@ -1,4 +1,4 @@
-### Step by step Guide to install Debian on a computer ###
+# Step by step Guide to install Debian on a computer
 
 | Step | What to do | Our Selection|
 |------|------------|---------------|
