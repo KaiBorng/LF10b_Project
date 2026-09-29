@@ -1,7 +1,7 @@
 # Step by step Guide to install Debian on a computer
 
-| Step | What to do | Our Selection|
-|------|------------|---------------|
+| Step | What you must | Our choices |
+|------|---------------|-------------|
 |1.| take an USB-Stick and a Laptop or System | USB-Stick_5 |
 |2.| connect the laptop to a power supply and start it | |
 |3.| open the Boot Manager | press F12 |
