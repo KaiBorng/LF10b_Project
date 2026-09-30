@@ -1,8 +1,8 @@
 ## Legende
 Server-MK-1 = Produktivsystem mit Kontainern
-              Kontainer1: DHCP
-              Kontainer2: Monitoring/Log-Server
-              Kontainer3: Client
+    Kontainer1: DHCP
+    Kontainer2: Monitoring/Log-Server
+    Kontainer3: Client
 
 Server-MK-2 = Backupserver
               Kontainer1: Backup
