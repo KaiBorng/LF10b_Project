@@ -1,4 +1,4 @@
-# Passwörter fur die Laptop
+# Passwörter fur die Laptops Server-MK-1 und Server-MK-2
 
 | Benutzername | Passwort |
 |--------------|----------|
