@@ -8,7 +8,8 @@ Server-MK-2 = Backupserver </br>
 
 ## Dokumentationen:
 How to install [debian 12.xx](https://github.com/KaiBorng/LF10b_Project/blob/e0c6e2baa2577c42163a11ed77342d66da17f62a/src/documentation/Installation_debian.md) </br>
-How to setup [LXC](https://github.com/KaiBorng/LF10b_Project/blob/e94dea19d404131aa106b85333a79e1703ace086/src/documentation/lxc_configuration.md) on debian 12.xx </br>
+How to [setup LXC](https://github.com/KaiBorng/LF10b_Project/blob/e94dea19d404131aa106b85333a79e1703ace086/src/documentation/lxc_configuration.md), [LXC Basics](https://github.com/KaiBorng/LF10b_Project/blob/fce72b852efe3579b8d58315ac90afd38145e66b/src/documentation/lxc_basics.md) on debian 12.xx </br>
+Our official [Restart Plan](https://github.com/KaiBorng/LF10b_Project/blob/fce72b852efe3579b8d58315ac90afd38145e66b/src/documentation/restart_plan.md)
 
 MK-storage_pool (storage_pool)
 MK-bridge (Netzwerkverbindung für 2. Laptop
