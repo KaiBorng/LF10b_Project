@@ -1,5 +1,5 @@
-3. Monitoring-Container einrichten
-Wechsle in den Container (Host):
+# Monitoring-Container einrichten
+
 lxc exec monitoring -- bash
 Alle Befehle bis 3.6 gibst du dort ein (Prompt root@monitoring:~#).
 3.1 Prometheus installieren
