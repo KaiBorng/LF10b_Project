@@ -27,6 +27,7 @@ lxc launch ubuntu:24.04 monitoring <br>
 sleep 20 <br>
 lxc list <br>
 > Beide müssen RUNNING sein und eine IPv4-Adresse haben <br>
-> Optional: Feste Adresse für dhcp, damit sich die IP nach einem Neustart nicht ändert <br>
+> Optional: Feste Adresse für dhcp, damit sich die IP nach einem Neustart nicht ändert
+
 lxc config device override dhcp eth0 ipv4.address=10.10.10.206 <br>
 lxc restart dhcp <br>
