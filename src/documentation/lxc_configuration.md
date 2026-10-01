@@ -2,7 +2,7 @@
 PC starten <br>
 mit Benutzer anmelden, der Admin Rechte bekommen kann <br>
 Applications -> System Tools -> Mate Terminal <br>
-`sudo su -` & *Benutzerpasswort angeben* <br>
+`sudo su -` und *Benutzerpasswort angeben* <br>
 `apt update && apt upgrade && apt autoremove` <br>
 
 
