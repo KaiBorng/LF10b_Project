@@ -19,4 +19,4 @@ MK-bridge (Netzwerkverbindung für 2. Laptop
 LXD Prot 8443
 Trust password for new clients: lxclxd
 
-#### A Project from Kai Borngräebr and Maximilian Gräfe
+#### A Project from Kai Borngräber and Maximilian Gräfe
