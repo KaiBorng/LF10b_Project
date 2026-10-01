@@ -21,9 +21,9 @@
 |17.| choose a hostname for your system | Server-MK-1 or Server-MK-2 |
 |18.| choose a domain name | *no input = no domainname* |
 |19.| select root passwort | root |
-|20.| choose a name for a non admin user | user1 |
-|21.| choose a username for a non admin user | user1 |
-|22.| choose a password for the user | user1 |
+|20.| choose a name for a non admin user | [user1](https://github.com/KaiBorng/LF10b_Project/blob/ff14cea9609999fadd11f1925b0e53eac6380380/src/documentation/passwords.md) |
+|21.| choose a username for a non admin user | [user1](https://github.com/KaiBorng/LF10b_Project/blob/ff14cea9609999fadd11f1925b0e53eac6380380/src/documentation/passwords.md) |
+|22.| choose a password for the user | [user1](https://github.com/KaiBorng/LF10b_Project/blob/ff14cea9609999fadd11f1925b0e53eac6380380/src/documentation/passwords.md) |
 |23.| select if the partition is Guided or Manual | Guided - use entire disc |
 |24.| select the disk, where you want to save your OS | /dev/nvmeOn1 - 512.1 GB ... |
 |25.| select the Partitioning | All files in one Partition (recommended for new users) |
