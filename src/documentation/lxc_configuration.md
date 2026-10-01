@@ -10,7 +10,7 @@ Container starten: lxc start *Containername* <br>
 Container löschen: lxc delete *Containername* <br>
 Container stoppen: lxc stop *Containername* <br>
 
-# 1. LXD installieren und initialisieren (Host)
+# 1. LXD installieren und initialisieren
 sudo snap install lxd <br>
 sudo lxd init --minimal <br>
 sudo usermod -aG lxd $USER <br>
@@ -21,7 +21,7 @@ lxc network list <br>
 sudo ufw allow in on lxdbr0 <br>
 sudo ufw route allow in on lxdbr0 <br>
 
-# 2. Container anlegen (Host)
+# 2. Container anlegen
 lxc launch ubuntu:24.04 dhcp <br>
 lxc launch ubuntu:24.04 monitoring <br>
 sleep 20 <br>
