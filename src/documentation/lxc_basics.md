@@ -17,6 +17,7 @@
 | `lxc info mein-container` | Zeigt Informationen zum Container |
 | `lxc config show mein-container` | Zeigt die Konfiguration des Containers |
 | `lxc snapshot mein-container snap1` | Erstellt einen Snapshot |
+| `lxc export mein-container backupname` | Erstellt ein Backup |
 | `lxc restore mein-container snap1` | Stellt einen Snapshot wieder her |
 | `lxc file push datei.txt mein-container/root/` | Kopiert eine Datei in den Container |
 | `lxc file pull mein-container/root/datei.txt .` | Kopiert eine Datei aus dem Container |
