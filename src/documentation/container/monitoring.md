@@ -1,5 +1,5 @@
 # Monitoring-Container einrichten
-lxc exec monitoring -- bash
+`lxc exec monitoring -- bash`
 
 ## 1. Prometheus installieren
 apt update
@@ -84,15 +84,15 @@ expr: (1 - node_filesystem_avail_bytes{mountpoint="/"} /
 node_filesystem_size_bytes{mountpoint="/"}) * 100 > 90
 for: 10m <br>
 
-### EOF
-• record legt eine neue Kennzahl an (CPU, RAM, Platte, Netzwerk ein/aus in %, bzw. Bytes pro Sekunde). <br>
-• alert löst aus, wenn expr für die Dauer for wahr ist: Ausfall (2 Min.), CPU über 90 % 5 Min.), Platte über 90 % (10 Min.) <br>
+> EOF
+> record legt eine neue Kennzahl an (CPU, RAM, Platte, Netzwerk ein/aus in %, bzw. Bytes pro Sekunde). <br>
+> alert löst aus, wenn expr für die Dauer for wahr ist: Ausfall (2 Min.), CPU über 90 % 5 Min.), Platte über 90 % (10 Min.) <br>
 
 ## 5. Prüfen und starten
 
-promtool check config /etc/prometheus/prometheus.yml <br>
-systemctl enable prometheus <br>
-systemctl restart prometheus <br>
-systemctl is-active prometheus <br>
-promtool muss SUCCESS für Konfiguration und Regeldatei melden, is-active muss <br>
-active ausgeben. Fehler sind meist falsche Einrückungen (nur Leerzeichen, keine Tabs)
+`promtool check config /etc/prometheus/prometheus.yml` <br>
+`systemctl enable prometheus` <br>
+`systemctl restart prometheus` <br>
+`systemctl is-active prometheus` <br>
+> romtool muss SUCCESS für Konfiguration und Regeldatei melden, is-active muss active ausgeben
+> Fehler sind meist falsche Einrückungen (nur Leerzeichen, keine Tabs)
