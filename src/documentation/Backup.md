@@ -18,8 +18,7 @@ Gestoppt ist das Backup konsistent: <br>
 `lxc start dhcp monitoring` <br>
 `lxc list` <br>
 
-> Das Datum im Dateinamen passt du an <br>
-> Das Netz `dhcpnet` muss vor dem Start von dhcp existieren, weil der Container es als eth1 verwendet. <br>
+> Das Datum im Dateinamen passt du an das Netz `dhcpnet` muss vor dem Start von dhcp existieren, weil der Container es als eth1 verwendet. <br>
 > Existiert schon ein Container mit gleichem Namen, lösche ihn vorher mit `lxc delete -f <name>` oder gib beim Import einen anderen Namen an `lxc import <datei> dhcp-neu`. <br>
 > Prüfe nach dem Start das Scrape-Ziel in `/etc/prometheus/prometheus.yml` gegen die aktuelle IP von dhcp
 
@@ -76,33 +75,24 @@ Prüfe, ob die Netzwerkkarten der Container am richtigen Netz hängen: <br>
 `lxc config device set dhcp eth1 network=dhcpnet` <br>
 `lxc config device set client eth0 network=dhcpnet` <br>
 
-Gib dem DHCP-Container wieder seine feste Adresse. Das Ziel in der prometheus.yml (10.10.10.206) hängt daran:
-
-lxc config device override dhcp eth0 ipv4.address=10.10.10.206
-
-Meldet LXD, dass das Gerät eth0 schon existiert, dann setze den Wert so:
-
-lxc config device set dhcp eth0 ipv4.address=10.10.10.206
-
-Prüfe außerdem das Speicherlimit von dhcp gegen den RAM des neuen Hosts:
-
+Gib dem DHCP-Container wieder seine feste Adresse. Das Ziel in der prometheus.yml (10.10.10.206) hängt daran: <br>
+`lxc config device set dhcp eth0 ipv4.address=10.10.10.206` <br>
+Prüfe außerdem das Speicherlimit von dhcp gegen den RAM des neuen Hosts: <br>
 `lxc config get dhcp limits.memory` <br>
 `free -m` <br>
 
-Optional bekommt auch monitoring eine feste Adresse (lxc config device override monitoring eth0 ipv4.address=10.10.10.178), damit Grafana unter einer gleichbleibenden Adresse erreichbar bleibt.
-B6. Container starten
+> Optional bekommt auch monitoring eine feste Adresse `lxc config device override monitoring eth0 ipv4.address=10.10.10.178`, damit Grafana unter einer gleichbleibenden Adresse erreichbar bleibt
 
+## 5. Container starten
 Der DHCP-Container zuerst, danach die anderen:
-
 `lxc start dhcp` <br>
 `sleep 15` <br>
 `lxc start monitoring client` <br>
 `sleep 20` <br>
 `lxc list` <br>
+> Alle drei müssen RUNNING sein. Bei dhcp stehen 10.10.10.206 (eth0) und 192.168.50.1 (eth1), beim Client eine Adresse aus 192.168.50.100 bis .200.  <br>
 
-Alle drei müssen RUNNING sein. Bei dhcp stehen 10.10.10.206 (eth0) und 192.168.50.1 (eth1), beim Client eine Adresse aus 192.168.50.100 bis .200.
-B7. Funktion prüfen
-
+## 6. Funktion prüfen <br>
 `lxc exec dhcp -- systemctl is-active prometheus-node-exporter dnsmasq` <br>
 `lxc exec monitoring -- systemctl is-active prometheus grafana-server` <br>
 `lxc exec monitoring -- curl -s 'http://localhost:9090/api/v1/query?query=up'` <br>
