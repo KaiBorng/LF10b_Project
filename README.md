@@ -11,8 +11,8 @@ Our official [Restart Plan](https://github.com/KaiBorng/LF10b_Project/blob/main/
 
 ### Containers:
 [DHCP](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/container/DHCP.md)<br>
-[Prometheus](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/container/monitoring.md) <br>
-[Client](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/container/client.md) <br>
+[monitoring](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/container/monitoring.md) <br>
+[client](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/container/client.md) <br>
 
 ___________________________________________________
 MK-storage_pool (storage_pool)
