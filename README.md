@@ -14,10 +14,4 @@ Our official [Restart Plan](https://github.com/KaiBorng/LF10b_Project/blob/main/
 [monitoring](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/container/monitoring.md) <br>
 [client](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/container/client.md) <br>
 
-___________________________________________________
-MK-storage_pool (storage_pool)
-MK-bridge (Netzwerkverbindung für 2. Laptop
-LXD Prot 8443
-Trust password for new clients: lxclxd
-
 #### A Project from Kai Borngräber and Maximilian Gräfe
