@@ -8,7 +8,7 @@ How to install [debian 12.xx](https://github.com/KaiBorng/LF10b_Project/blob/mai
 How to [setup LXC](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/lxc_configuration.md), [LXC Basics](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/lxc_basics.md) on debian 12.xx <br>
 How to [Backup](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/Backup.md) a Container <br>
 Our official [Restart Plan](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/restart_plan.md) <br>
-Ansible [Automatisierung](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/automatisierung.md) <br>
+Ansible [Automatisierung]((https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/automatisation_with_ansible.md)) <br>
 
 ### Containers:
 [DHCP](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/container/DHCP.md)<br>
