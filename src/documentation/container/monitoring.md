@@ -1,11 +1,11 @@
 # Monitoring-Container einrichten
 lxc exec monitoring -- bash
 
-## 1 Prometheus installieren
+## 1. Prometheus installieren
 apt update
 apt install -y prometheus <br>
 
-## 2 Hauptkonfiguration prometheus.yml
+## 2. Hauptkonfiguration prometheus.yml
 > Trage bei targets die IP des DHCP-Containers ein:
 
 cat > /etc/prometheus/prometheus.yml << 'EOF'
@@ -36,7 +36,7 @@ static_configs:
 > • Recording Rules berechnen eine Kennzahl dauerhaft vor und speichern sie unter einem eigenen kurzen Namen. Statt der langen CPU-Formel fragst du nur dhcp:cpu_percent ab. <br>
 > • Alerting Rules prüfen eine Bedingung (z. B. „Ziel ist ausgefallen“). Der Zustand erscheint in der Weboberfläche im Menü Alerts. Eine Benachrichtigung per E-Mail o. Ä. gibt es erst mit dem zusätzlichen Alertmanager. <br>
 
-## 3 Aufbewahrung der Daten begrenzen
+## 3. Aufbewahrung der Daten begrenzen
 
 cat > /etc/default/prometheus << 'EOF'
 ARGS="--storage.tsdb.retention.time=1d --storage.tsdb.retention.size=1GB"
@@ -44,7 +44,7 @@ ARGS="--storage.tsdb.retention.time=1d --storage.tsdb.retention.size=1GB"
 ### EOF
 Daten älter als 1 Tag werden gelöscht, und die Datenbank wird nie größer als 1 GB. Es gilt, was zuerst erreicht wird. Die Löschung erfolgt blockweise, alte Daten können deshalb noch einige Stunden länger sichtbar sein. <br>
 
-## 4 Regeldatei rules.yml
+## 4. Regeldatei rules.yml
 cat > /etc/prometheus/rules.yml << 'EOF'
 groups:
 - name: dhcp-kennzahlen
@@ -88,7 +88,7 @@ for: 10m <br>
 • record legt eine neue Kennzahl an (CPU, RAM, Platte, Netzwerk ein/aus in %, bzw. Bytes pro Sekunde). <br>
 • alert löst aus, wenn expr für die Dauer for wahr ist: Ausfall (2 Min.), CPU über 90 % 5 Min.), Platte über 90 % (10 Min.) <br>
 
-## 5 Prüfen und starten
+## 5. Prüfen und starten
 
 promtool check config /etc/prometheus/prometheus.yml <br>
 systemctl enable prometheus <br>
