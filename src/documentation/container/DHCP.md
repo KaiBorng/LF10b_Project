@@ -1,9 +1,10 @@
 # DHCP-Container vorbereiten
 
 ## 1. node_exporter installieren <br>
-`lxc exec dhcp -- apt update` <br>
-`lxc exec dhcp -- apt install -y prometheus-node-exporter` <br>
-`lxc exec dhcp -- systemctl is-active prometheus-node-exporter` <br>
+`lxc exec dhcp -- bash` <br>
+`apt update && apt upgrade && apt autoremove` <br>
+`apt install -y prometheus-node-exporter` <br>
+`systemctl is-active prometheus-node-exporter` <br>
 > Wozu? Prometheus misst nicht selbst, sondern holt Werte von Programmen ab. <br>
 Der node_exporter stellt Systemwerte des Containers (CPU, RAM, Platte, Netzwerk) als Text auf Port 9100 bereit <br> Prometheus ruft diese Seite alle 60 Sekunden ab. <br>
 
