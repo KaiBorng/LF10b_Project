@@ -2,7 +2,7 @@
 `sudo su -` <br>
 `apt update && apt upgrade && apt autoremove` <br>
 `apt install -y ansible` <br>
-der Ordner [ansible](github.com/KaiBorng/LF10b_Project/tree/main/src/documentation/automatisation/ansible) muss heruntergeladen werden <br>
+der Ordner muss heruntergeladen werden mit folgenden Dateien [1](url), [2](url)<br>
 `sudo ansible-playbook -i inventory.ini setup_environment.yml` <br>
 
 ## Was das Skript vollautomatisch erledigt:
