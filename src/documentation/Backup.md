@@ -28,7 +28,7 @@ ________________________________________________________________________
 ## 1. LXD installieren und initialisieren
 `sudo snap install lxd` <br>
 `sudo lxd init --minimal` <br>
-`sudo usermod -aG lxd` [$USER](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/passwords.md) <br>
+`sudo usermod -aG lxd` [`$USER`](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/passwords.md) <br>
 
 Melde dich danach ab und wieder an. Prüfe dann: <br>
 `export PATH=$PATH:/snap/bin` <br>
@@ -53,8 +53,7 @@ Stick einstecken. Wird er nicht automatisch eingebunden: <br>
 `lxc network set lxdbr0 ipv4.address=10.10.10.1/24` <br>
 `lxc network set lxdbr0 ipv6.address=none` <br>
 > Ohne diese zwei Netze starten dhcp und client nicht oder bekommen falsche Adressen <br>
-> `dhcpnet` ist das isolierte Netz ohne LXD-DHCP, in dem die dnsmasq Adressen verteiltwerden
-`lxc network create dhcpnet ipv4.address=none ipv6.address=none` <br>
+> `dhcpnet` ist das isolierte Netz ohne LXD-DHCP, in dem die dnsmasq Adressen verteiltwerden `lxc network create dhcpnet ipv4.address=none ipv6.address=none` <br>
 
 Kontrolle: <br>
 `lxc network list` <br>
@@ -68,22 +67,14 @@ Kontrolle: <br>
 `lxc import client.tar.gz` <br>
 `lxc list` <br>
 
-+ Tabelle
-Meldung 	Lösung
-Storage pool not found 	Pool mit lxc storage list nachsehen, dann lxc import datei.tar.gz --storage POOLNAME
-Container existiert schon 	Mit neuem Namen importieren (lxc import datei.tar.gz neuername) oder alten mit lxc delete -f NAME löschen
-Fehlende Datei im Archiv (z. B. backup.yaml) 	Die Datei ist kein Container-Backup, sondern ein Image
-B5. Konfiguration prüfen und feste IP setzen
-+++++++
-
 Prüfe, ob die Netzwerkkarten der Container am richtigen Netz hängen: <br>
 `lxc config show dhcp --expanded | grep -B1 -A4 "eth"` <br>
 `lxc profile show default | grep -A3 eth0` <br>
 
-Der Container dhcp braucht eth0 an lxdbr0 (über das Profil) und eth1 an dhcpnet. Der Client hängt mit eth0 an dhcpnet. Sind sie dort falsch (zum Beispiel weil du ein anderes Netz als lxdbr0 benutzt), korrigierst du sie:
-
-`lxc config device set dhcp eth1 network=dhcpnet`
-`lxc config device set client eth0 network=dhcpnet`
+> Der Container dhcp braucht eth0 an lxdbr0 (über das Profil) und eth1 an dhcpnet <br>
+> Der Client hängt mit eth0 an dhcpnet. Sind sie dort falsch (zum Beispiel weil du ein anderes Netz als lxdbr0 benutzt), korrigierst du sie: <br>
+`lxc config device set dhcp eth1 network=dhcpnet` <br>
+`lxc config device set client eth0 network=dhcpnet` <br>
 
 Gib dem DHCP-Container wieder seine feste Adresse. Das Ziel in der prometheus.yml (10.10.10.206) hängt daran:
 
