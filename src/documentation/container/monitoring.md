@@ -76,7 +76,7 @@
 
 > EOF
 > record legt eine neue Kennzahl an (CPU, RAM, Platte, Netzwerk ein/aus in %, bzw. Bytes pro Sekunde). <br>
-> alert löst aus, wenn expr für die Dauer for wahr ist: Ausfall (2 Sekkunden), CPU über 90 % 5 Min.), Platte über 90 % (10 Min.) <br>
+> alert löst aus, wenn expr für die Dauer for wahr ist: Ausfall (2 Sekunden), CPU über 90 % 5 Min.), Platte über 90 % (10 Min.) <br>
 
 ## 5. Prüfen und starten
 
