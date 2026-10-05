@@ -1,5 +1,7 @@
 # Restart Plan after an incident
 
+## Mit Ansible
+
 1. [Bootstick](https://www.youtube.com/watch?v=rWl9w8m0DBc) für debian erstellen
 2. Zurücksetzen des Systems
 3. [Debian](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/Installation_debian.md) aufsetzen
