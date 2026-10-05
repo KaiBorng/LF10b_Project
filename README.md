@@ -1,6 +1,7 @@
 ## Legende
 Server-MK-1 = Produktivsystem mit Kontainern </br>
-Server-MK-2 = Backupserver </br>
+Server-MK-2 = Backupsystem/Recoverysystem </br>
+USB-14 = Backupusbstick
 
 ## Dokumentationen:
 A list of our [Passwords](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/passwords.md) <br>
