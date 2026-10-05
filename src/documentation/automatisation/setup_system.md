@@ -1,4 +1,4 @@
-# 1. Ansible installieren und Container erstellen
+# Ansible installieren und Container erstellen
 `sudo su -` <br>
 `apt update && apt upgrade && apt autoremove` <br>
 `apt install -y ansible` <br>
