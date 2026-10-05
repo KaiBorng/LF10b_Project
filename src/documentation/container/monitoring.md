@@ -4,6 +4,7 @@
 ## 1. Prometheus installieren
 `apt update`  <br>
 `apt install -y prometheus` <br>
+`apt install -y prometheus-pushgateway` <br>
 
 ## 2. Hauptkonfiguration prometheus.yml
 > Trage bei targets die IP des DHCP-Containers ein:
@@ -17,6 +18,10 @@
   
 `scrape_configs:` <br>
 `- job_name: dhcp` <br>
+`- job_name: pushgateway
+    honor_labels: true
+    static_configs:
+      - targets: ['localhost:9091']`<br>
   
 `static_configs:` <br>
 `- targets: ['10.10.10.206:9100']` <br>
