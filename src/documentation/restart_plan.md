@@ -14,4 +14,7 @@
 2. Zurücksetzen des Systems
 3. [Debian](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/Installation_debian.md) aufsetzen
 4. [LXC Konfiguration](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/lxc_configuration.md) mit [LXC Basics](github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/lxc_basics.md)
-5. Alles funktioniert wieder
+5. Erstellung [DHCP](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/container/DHCP.md) als Kontainer
+6. Erstellung [Client](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/container/client.md) als Kontainer
+7. Erstellung [Monitoring](https://github.com/KaiBorng/LF10b_Project/blob/main/src/documentation/container/monitoring.md) als Kontainer
+8. Alles funktioniert wieder
