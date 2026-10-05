@@ -100,6 +100,4 @@ Der DHCP-Container zuerst, danach die anderen:
 `lxc exec dhcp -- cat /var/lib/misc/dnsmasq.leases` <br>
 
 ## 7.Funktion Monitoring (Backup) prüfen <br>
-`echo "backup_last_success 1` <br>
-`backup_last_run_timestamp_seconds $(date +%s)`<br>
-`backup_size_bytes 1000000" | curl -sS --data-binary @-`<br> `http://10.10.10.178:9091/metrics/job/backup`<br>
+`printf 'backup_last_success 1\nbackup_last_run_timestamp_seconds %s\nbackup_size_bytes 1000000\n' "$(date +%s)" | curl -sS --data-binary @- http://10.10.10.178:9091/metrics/job/backup`<br>
