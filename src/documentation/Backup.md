@@ -98,3 +98,8 @@ Der DHCP-Container zuerst, danach die anderen:
 `lxc exec monitoring -- curl -s 'http://localhost:9090/api/v1/query?query=up'` <br>
 `lxc exec client -- ip -br a` <br>
 `lxc exec dhcp -- cat /var/lib/misc/dnsmasq.leases` <br>
+
+## 7.Funktion Monitoring (Backup) prüfen <br>
+`echo "backup_last_success 1` <br>
+`backup_last_run_timestamp_seconds $(date +%s)`<br>
+`backup_size_bytes 1000000" | curl -sS --data-binary @-`<br> `http://10.10.10.178:9091/metrics/job/backup`<br>
