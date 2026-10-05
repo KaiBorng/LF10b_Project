@@ -10,8 +10,8 @@
 
 `cat > /etc/prometheus/prometheus.yml << 'EOF'` <br>
 `global:` <br>
-`scrape_interval: 60s` <br>
-`evaluation_interval: 60s` <br>
+`scrape_interval: 1s` <br>
+`evaluation_interval: 1s` <br>
 `rule_files:` <br>
 `- rules.yml` <br>
   
@@ -24,8 +24,8 @@
 ### EOF
 | Eintrag | Bedeutung |
 |---------|-----------|
-| scrape_interval | Alle 60 s holt Prometheus die Messwerte ab |
-| evaluation_interval | Alle 60 s werden die Regeln ausgewertet |
+| scrape_interval | Alle 1 s holt Prometheus die Messwerte ab |
+| evaluation_interval | Alle 1 s werden die Regeln ausgewertet |
 | rule_files | Verweist auf Dateien mit Regeln (Pfad relativ zur prometheus.yml) |
 | scrape_configs | Liste der Ziele: der node_exporter auf Port 9100 im DHCPContainer 
 > Was machen rule_files? Die Prometheus-Konfiguration kennt von sich aus nur Ziele und Intervalle <br>
@@ -67,16 +67,16 @@
 ### rules:
 `- alert: DhcpContainerDown` <br>
 `expr: up{job="dhcp"} == 0` <br>
-`for: 2m` <br>
+`for: 2s` <br>
 `- alert: DhcpCpuHoch` <br>
 `expr: 100 - (avg(rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 90 for: 5m` <br>
 `- alert: DhcpPlatteVoll` <br>
 `expr: (1 - node_filesystem_avail_bytes{mountpoint="/"} /node_filesystem_size_bytes{mountpoint="/"}) * 100 > 90` <br>
-`for: 10m` <br>
+`for: 2s` <br>
 
 > EOF
 > record legt eine neue Kennzahl an (CPU, RAM, Platte, Netzwerk ein/aus in %, bzw. Bytes pro Sekunde). <br>
-> alert löst aus, wenn expr für die Dauer for wahr ist: Ausfall (2 Min.), CPU über 90 % 5 Min.), Platte über 90 % (10 Min.) <br>
+> alert löst aus, wenn expr für die Dauer for wahr ist: Ausfall (2 Sekkunden), CPU über 90 % 5 Min.), Platte über 90 % (10 Min.) <br>
 
 ## 5. Prüfen und starten
 
